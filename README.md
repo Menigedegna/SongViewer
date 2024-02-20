@@ -12,4 +12,4 @@ For more information on that application go to [Back-end Express+MongoDB project
 
 ### Deployment
 
-Go to website: [link]("https://songviewer.netlify.app/")
+Go to website: [link](https://songviewer.netlify.app/)
