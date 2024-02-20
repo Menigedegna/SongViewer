@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <div className='mainContainer'>
-        <div className='topHome'>
+        {/* <div className='topHome'> */}
         <div className="songFormContainer">
           {songFilterChoice==="None"
           ?<Form/>
@@ -44,21 +44,23 @@ function App() {
           :<SelectChoice />
           }
           </div>
-        </div>
-        <div className='serverMessage'>
+        {/* </div> */}
+        <div className={serverMessage!==""?'serverMessage':"noServerMessage"}>
           <p>{serverMessage}</p>
         </div>
-        <div className='bottomHome'>
+        {/* <div className='bottomHome'> */}
           <div className='tableContainer'>
             <div className='tableInnerContainer'>
               {isLoading
               ?<Loading/>
-              :<Table data={songData}/>
+              :songData.length>0
+              ?<Table data={songData}/>
+              :<div className='noSongMessage'>No songs 😞. Add some.</div>
               }
             </div>
           </div>
           <LoadStats data={songStats}/>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );

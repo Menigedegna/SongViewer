@@ -3,10 +3,10 @@
 
 import { takeEvery, put, call } from 'redux-saga/effects';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { getSongsSuccess, getSongsFailure, getSongsFetch} from './DataLoadingState';
-import { startSongPosting, serverUpdateResult, startSongRemoving, startSongUpdating} from './DataPostingState';
-import {songFrame} from './DataLoadingState';
-import {formDataFrame} from './AppState';
+import { getSongsSuccess, getSongsFailure, getSongsFetch} from './state/DataLoadingState';
+import { startSongPosting, serverUpdateResult, startSongRemoving, startSongUpdating} from './state/DataPostingState';
+import {songFrame} from './state/DataLoadingState';
+import {formDataFrame} from './state/AppState';
 
 let SERVER_PATH = "https://songserver.onrender.com/api/Track/";
 

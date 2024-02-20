@@ -8,7 +8,7 @@ import createSagaMiddleware from "redux-saga";
 import { configureStore } from '@reduxjs/toolkit';
 import songReducer from './state/DataLoadingState';
 import songPostingReducer from './state/DataPostingState'
-import {watchLoadData, watchPostData, watchDeleteData, watchUpdateData} from './state/WatchLoadData';
+import {watchLoadData, watchPostData, watchDeleteData, watchUpdateData} from './WatchServer';
 import appStateReducer from './state/AppState';
 import { all } from 'redux-saga/effects';
 
@@ -24,8 +24,6 @@ const store = configureStore({
 });
 
 // Run the saga middleware
-// sagaMiddleware.run(watchLoadData);
-// sagaMiddleware.run(watchPostData);
 sagaMiddleware.run(function* rootSaga() {
   yield all([watchLoadData(), watchPostData(), watchDeleteData(), watchUpdateData()]);
 });
