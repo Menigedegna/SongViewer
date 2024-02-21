@@ -55,9 +55,7 @@
 .noServerMessage{
   display: none;
 }
-.noSongMessage{
-  color: white;
-}
+
 .tableContainer{
   height: 25rem;
   grid-area: table;
@@ -78,7 +76,7 @@
   gap:.2rem;
 }
 .tableInnerContainer{
-  height: inherit;
+  height: 100%;
   width: 100%;
   /* display: flex; */
   display: block;
@@ -328,9 +326,13 @@ td{
   font-weight: bold;
 }
 
-.isLoadingClass{
+.isLoadingClass, .noSongMessage{
   color: white;
   font-size: 1.1rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media(min-width: 600px){
